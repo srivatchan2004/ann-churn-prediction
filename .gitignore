@@ -1,0 +1,23 @@
+# macOS system files
+.DS_Store
+
+# TensorBoard training logs (recreated when you run the notebooks)
+log/
+regressionlogs/
+
+# Jupyter and Python cache
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Duplicate encoders made by notebooks 3 and 4 (app.py uses label_encoder.pkl and onehot.pkl)
+label_encoder_gender.pkl
+onehot_encoder_geo.pkl
+
+# Secrets
+.env

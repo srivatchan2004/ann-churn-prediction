@@ -1,0 +1,60 @@
+<svg viewBox="0 0 680 284" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --lumi-ink: light-dark(#000000, #e0e0e0);
+      --lumi-muted: light-dark(#5f6368, #9aa0a6);
+      --lumi-dim: light-dark(#f2f0f0, #242528);
+      --lumi-container: light-dark(#e8e6e6, #2d2f33);
+      --lumi-outline: light-dark(#727676, #9a9b9c);
+      --lumi-accent-bg: light-dark(#dcf1ff, #192967);
+      --lumi-primary: light-dark(#3186ff, #9dd2ff);
+      --lumi-sans: 'Google Sans Flex', var(--font-family, 'Google Sans', sans-serif);
+      --lumi-mono: 'Google Sans Code', ui-monospace, monospace;
+    }
+    text { font-weight: 400; stroke: none; }
+    .t-l1 { font-family: var(--lumi-sans); font-size: 15px; fill: var(--lumi-ink); }
+    .t-l2 { font-family: var(--lumi-mono); font-size: 13px; font-style: italic; fill: var(--lumi-ink); }
+    .t-l4 { font-family: var(--lumi-sans); font-size: 13px; fill: var(--lumi-muted); }
+    .node-step { fill: var(--lumi-dim); stroke: none; }
+    .node-focal { fill: var(--lumi-accent-bg); stroke: var(--lumi-primary); stroke-width: 1.25; }
+    .node-store { fill: var(--lumi-container); stroke: var(--lumi-outline); stroke-width: 1; }
+    .edge-arrow { fill: none; stroke: var(--lumi-ink); stroke-width: 1.3; stroke-linecap: round; stroke-dasharray: 0 4; marker-end: url(#lumi-caret); }
+  </style>
+  <defs>
+    <marker id="lumi-caret" viewBox="0 0 10 10" refX="7.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 3 1.2 L 7.5 5 L 3 8.8" fill="none" stroke="var(--lumi-ink)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect class="node-store" x="20" y="20" width="172" height="80" rx="40"/>
+  <text class="t-l1" x="106" y="51" text-anchor="middle" dominant-baseline="central">Churn.csv</text>
+  <text class="t-l4" x="106" y="73" text-anchor="middle" dominant-baseline="central">10,000 rows</text>
+
+  <line class="edge-arrow" x1="200" y1="60" x2="246" y2="60"/>
+
+  <rect class="node-step" x="254" y="20" width="172" height="80" rx="40"/>
+  <text class="t-l1" x="340" y="51" text-anchor="middle" dominant-baseline="central">Preprocessing</text>
+  <text class="t-l4" x="340" y="73" text-anchor="middle" dominant-baseline="central">Encode + scale</text>
+
+  <line class="edge-arrow" x1="434" y1="60" x2="480" y2="60"/>
+
+  <rect class="node-focal" x="488" y="20" width="172" height="80" rx="40"/>
+  <text class="t-l1" x="574" y="51" text-anchor="middle" dominant-baseline="central">Churn ANN</text>
+  <text class="t-l2" x="574" y="73" text-anchor="middle" dominant-baseline="central">64-32-1 Sigmoid</text>
+
+  <path class="edge-arrow" d="M 300 108 L 300 124 Q 300 140 284 140 L 122 140 Q 106 140 106 156 L 106 176"/>
+  <line class="edge-arrow" x1="340" y1="108" x2="340" y2="176"/>
+  <line class="edge-arrow" x1="574" y1="108" x2="574" y2="176"/>
+
+  <rect class="node-step" x="20" y="184" width="172" height="80" rx="40"/>
+  <text class="t-l1" x="106" y="215" text-anchor="middle" dominant-baseline="central">Salary ANN</text>
+  <text class="t-l2" x="106" y="237" text-anchor="middle" dominant-baseline="central">64-32-1 Linear</text>
+
+  <rect class="node-step" x="254" y="184" width="172" height="80" rx="40"/>
+  <text class="t-l1" x="340" y="215" text-anchor="middle" dominant-baseline="central">GridSearchCV</text>
+  <text class="t-l4" x="340" y="237" text-anchor="middle" dominant-baseline="central">3-fold CV tuning</text>
+
+  <rect class="node-store" x="488" y="184" width="172" height="80" rx="40"/>
+  <text class="t-l1" x="574" y="215" text-anchor="middle" dominant-baseline="central">Streamlit App</text>
+  <text class="t-l2" x="574" y="237" text-anchor="middle" dominant-baseline="central">Live web UI</text>
+</svg>
